@@ -1,7 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
+import VueRouter from 'vue-router'
+import routerConfig from './router.config.js'
 
 import axios from 'axios'
+
+Vue.use(VueRouter);
+
+let router = new VueRouter({
+  mode: 'history',
+  routes: routerConfig
+})
 
 //配置axios
 axios.interceptors.request.use(function(config){
@@ -22,5 +31,6 @@ axios.interceptors.response.use(function(response){
 
 new Vue({
   el: '#app',
+  router,
   render: h => h(App)
 })

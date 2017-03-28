@@ -1,15 +1,19 @@
 <template>
   <div id="app">
     <HeaderView :sellerData="dataContainer"></HeaderView>
+    <Tab></Tab>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
   import HeaderView from './components/Header.vue'
+  import Tab from './components/Tab.vue'
 
   export default {
     components: {
-      HeaderView
+      HeaderView,
+      Tab
     },
     data () {
       return {
